@@ -30,4 +30,32 @@ contract PegToken is ERC20PermitUpgradeable, OwnableUpgradeable, PausableUpgrade
     function unpause() external onlyOwner {
         _unpause();
     }
+
+    /**
+     * @dev See {ERC20-_transfer}.
+     * @param from Source address
+     * @param to Destination address
+     * @param amount Transfer amount
+     */
+    function _transfer(
+        address from,
+        address to,
+        uint256 amount
+    ) internal override whenNotPaused {
+        super._transfer(from, to, amount);
+    }
+
+    /**
+     * @dev See {ERC20-_approve}.
+     * @param owner Owners's address
+     * @param spender Spender's address
+     * @param amount Allowance amount
+     */
+    function _approve(
+        address owner,
+        address spender,
+        uint256 amount
+    ) internal override whenNotPaused {
+        return super._approve(owner, spender, amount);
+    }
 }
