@@ -14,7 +14,7 @@ contract DeployPegTokenBUSDScript is Script {
     function setUp() public {}
 
     function run() public {
-        vm.broadcast();
+        vm.startBroadcast();
 
         PegToken impl = new PegToken();
         ProxyAdmin proxyAdmin = new ProxyAdmin();
