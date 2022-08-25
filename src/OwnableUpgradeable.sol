@@ -87,7 +87,7 @@ abstract contract OwnableUpgradeable is Initializable, ContextUpgradeable {
         address oldOwner = _owner;
         _owner = _proposedOwner;
         _proposedOwner = address(0);
-        emit OwnershipPulled(oldOwner, _proposedOwner);
+        emit OwnershipPulled(oldOwner, _msgSender());
     }
 
     /**
