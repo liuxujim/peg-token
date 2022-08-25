@@ -37,7 +37,7 @@ contract PegToken is ERC20PermitUpgradeable, OwnableUpgradeable, PausableUpgrade
      * @return True if successful
      * Can only be called by the current owner.
      */
-    function burn(uint256 amount) public onlyOwner returns (bool) {
+    function burn(uint256 amount) external onlyOwner returns (bool) {
         _burn(_msgSender(), amount);
         emit Burn(_msgSender(), _msgSender(), amount);
         return true;
