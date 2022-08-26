@@ -8,7 +8,7 @@ import "openzeppelin-contracts/contracts/proxy/transparent/TransparentUpgradeabl
 import "../src/PegToken.sol";
 
 contract DeployPegTokenBUSDScript is Script {
-    string internal constant NAME = "Binance-Peg BUSD Token";
+    string internal constant NAME = "BUSD Token";
     string internal constant SYMBOL = "BUSD";
 
     function setUp() public {}
