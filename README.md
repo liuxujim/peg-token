@@ -9,7 +9,7 @@ Contract conforms to [EIP-20](https://eips.ethereum.org/EIPS/eip-20), [EIP-712](
 To install with [Foundry](https://github.com/foundry-rs/foundry):
 
 ```sh
-forge install hardsp0rk/peg-token
+forge install
 ```
 
 ## Test
