@@ -6,3 +6,4 @@ libs = ['lib']
 # See more config options https://github.com/foundry-rs/foundry/tree/master/config
 [rpc_endpoints]
 avalanche = "https://api.avax.network/ext/bc/C/rpc"
+polygon = "https://polygon-rpc.com"
