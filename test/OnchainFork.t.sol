@@ -7,7 +7,7 @@ import "openzeppelin-contracts/contracts/proxy/transparent/ProxyAdmin.sol";
 import "openzeppelin-contracts/contracts/proxy/transparent/TransparentUpgradeableProxy.sol";
 import "../src/PegToken.sol";
 
-contract OnchainForkTest is Test {
+abstract contract OnchainForkTest is Test {
     address internal deployer = 0xf537880c505BfA7cdA6c8c49D7efa53D45b52D40;
     address internal tokenOwner = 0x4A13E986a4B8E123721aA1F621E046fe3b74F724;
     address internal tokenProxyAdminOwner = 0x583C8F6d4FF765713BdC61E92B6B4AdAD700ddd6;
@@ -16,10 +16,6 @@ contract OnchainForkTest is Test {
     PegToken internal tokenImpl = PegToken(0x76195C48A5B809A57d3955089D7bc8782F0344CC);
     ProxyAdmin internal tokenProxyAdmin = ProxyAdmin(0x19b99c3fd2f8C846FbDC18079E1FA93A7636B03A);
 
-    function setUp() public {
-        vm.createSelectFork("avalanche");
-    }
-    
     function test_Initialization() public {
         emit log_named_uint("Deployer balance:", deployer.balance);
         emit log_named_address("Owner of proxyAdmin:", tokenProxyAdmin.owner());
